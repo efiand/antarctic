@@ -1,0 +1,7 @@
+{% macro background(imageset) -%}
+	style="
+		{%- for key, value in imageset -%}
+			--bg-{{ key }}: url('../{{ value }}');
+		{%- endfor -%}
+	"
+{%- endmacro %}

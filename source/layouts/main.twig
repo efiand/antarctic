@@ -1,0 +1,39 @@
+{% import 'modules/macro.twig' as mixin %}
+
+<!DOCTYPE html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>{{ projectName }}</title>
+
+		{% if description %}
+			<meta name="description" content="{{ description}}">
+		{% endif %}
+
+		<link rel="stylesheet" href="css/style.min.css{{ version }}">
+
+		{% for weight in [400, 500, 600, 700] %}
+			<link href="fonts/montserrat-{{ weight }}.woff2" rel="preload" as="font" crossorigin="anonymous">
+		{% endfor %}
+
+		{% include 'modules/favicons.twig' %}
+	</head>
+
+	<body>
+		<div class="page">
+			{% block header %}
+			{% endblock %}
+
+			<main>
+				{% block main %}{% endblock %}
+			</main>
+
+			{% block footer %}
+				{% include 'components/page-footer.twig' %}
+			{% endblock %}
+		</div>
+
+		{% include 'modules/scripts.twig' %}
+	</body>
+</html>

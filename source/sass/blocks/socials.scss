@@ -1,0 +1,27 @@
+.socials {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 30px);
+  padding: 0;
+  list-style: none;
+}
+
+.socials__link {
+  display: block;
+  width: 30px;
+  height: 30px;
+  transition: opacity $trans-default;
+
+  @include default-interactive;
+
+  &--ok {
+    background-image: url("../img/sprite.svg#social-ok");
+  }
+
+  &--vk {
+    background-image: url("../img/sprite.svg#social-vk");
+  }
+
+  &--pinterest {
+    background-image: url("../img/sprite.svg#social-pinterest");
+  }
+}
