@@ -709,6 +709,7 @@ input[type=number]::-webkit-inner-spin-button {
 .nav {
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-start;
   padding: 0;
   list-style: none;
 }
@@ -719,6 +720,17 @@ input[type=number]::-webkit-inner-spin-button {
   padding: 10px 0;
   font-weight: 500;
   line-height: 20px;
+  transition: opacity 0.3s ease;
+}
+
+.nav__link:focus-visible {
+  opacity: 0.8;
+}
+
+@supports not selector(:focus-visible) {
+  .nav__link.focus-visible:focus {
+    opacity: 0.8;
+  }
 }
 
 .page {
@@ -897,7 +909,7 @@ input[type=number]::-webkit-inner-spin-button {
   }
 
   .nav {
-    display: block;
+    flex-direction: column;
   }
 
   .nav__link {
@@ -989,6 +1001,17 @@ input[type=number]::-webkit-inner-spin-button {
   .logo:active,
   .logo:hover:active,
   .logo.focus-visible:active {
+    opacity: 0.5;
+  }
+
+  .nav__link:hover,
+  .nav__link:hover:not(.focus-visible) {
+    opacity: 0.8;
+  }
+
+  .nav__link:active,
+  .nav__link:hover:active,
+  .nav__link.focus-visible:active {
     opacity: 0.5;
   }
 
