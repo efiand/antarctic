@@ -23,6 +23,7 @@
 	<body>
 		<div class="page">
 			{% block header %}
+				{% include 'components/firstscreen.twig' with promo|merge({ bemMix: 'page__firstscreen' }) %}
 			{% endblock %}
 
 			<main>

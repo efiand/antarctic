@@ -1,0 +1,71 @@
+.firstscreen {
+  @include background-image;
+
+  color: $color-alice-blue-light;
+  background-color: $color-tangaroa;
+  background-position: 50% 100%;
+  background-size: cover;
+
+  .no-js:hover,
+  .no-js:focus-within,
+  .is-active {
+    + .firstscreen__promo {
+      @include vp-767 {
+        margin-top: 63px; // Стабильная высота мобильной шапки в покое
+        opacity: 0;
+      }
+    }
+  }
+}
+
+.firstscreen__promo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 542px;
+  padding: 34px 95px 150px;
+  text-shadow: $base-shadow;
+  transition: opacity $trans-default;
+
+  @include vp-1023 {
+    min-height: 560px;
+    padding: 64px 0 150px;
+  }
+
+  @include vp-767 {
+    min-height: 437px;
+    padding: 30px 0 96px;
+  }
+
+  h1 {
+    margin: 0 0 12px;
+    font-weight: 700;
+    font-size: 54px;
+    line-height: 66px;
+
+    @include vp-1023 {
+      font-size: 50px;
+      line-height: 61px;
+    }
+
+    @include vp-767 {
+      font-size: 36px;
+      line-height: 45px;
+    }
+  }
+
+  p {
+    margin: 0;
+    font-size: 20px;
+    line-height: 24px;
+
+    @include vp-1023 {
+      font-size: 18px;
+      line-height: 22px;
+    }
+
+    @include vp-767 {
+      margin-right: 30px;
+    }
+  }
+}

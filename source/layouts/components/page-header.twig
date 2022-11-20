@@ -1,0 +1,17 @@
+<header class="page-header {{ bemMix }} no-js" data-page-header>
+	<a class="page-header__logo logo" {{ page == 'index' ? 'aria-hidden="true"' : 'href="index.html"' }}>
+		<span class="visually-hidden">На главную.</span>
+
+		<svg width="70" height="38" viewbox="0 0 70 38" role="img" focusable="false">
+			<use xlink:href="img/svg/logo.svg#logo"/>
+		</svg>
+	</a>
+
+	<button class="page-header__toggler" type="button" aria-controls="nav" aria-expanded="false" data-toggler>
+		<span class="visually-hidden">Переключить режим отображения меню.</span>
+	</button>
+
+	<nav class="page-header__nav" id="nav">
+		{% include 'nav.twig' with { bemMix: 'page-header__nav-list', navLinks } %}
+	</nav>
+</header>

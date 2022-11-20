@@ -1,0 +1,9 @@
+<div class="firstscreen {{ bemMix }}" {{ mixin.background(image) }}>
+	<div class="container">
+		{% include 'page-header.twig' with { bemMix: 'firstscreen__header' } %}
+
+		<section class="firstscreen__promo">
+			{{ content }}
+		</section>
+	</div>
+</div>

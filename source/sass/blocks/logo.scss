@@ -1,0 +1,24 @@
+.logo {
+  @include default-interactive;
+
+  --color: currentColor;
+  width: 70px;
+
+  @include vp-1023 {
+    width: 38px;
+  }
+
+  @include vp-767 {
+    width: 42px;
+  }
+
+  &:not([href]) {
+    pointer-events: none;
+  }
+
+  svg {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}
