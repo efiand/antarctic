@@ -1,19 +1,4 @@
 {% with image %}
-	{% set imgAttributes %}
-		{% if className %}
-			class="{{ className }}"
-		{% endif %}
-
-		alt="{{ alt }}"
-		{% if not alt %}
-			aria-hidden="true"
-		{% endif %}
-
-		{% if not immediately %}
-			loading="lazy"
-		{% endif %}
-	{% endset %}
-
 	<picture>
 		{% if webpMobile %}
 			<source
@@ -38,9 +23,12 @@
 		{% endif %}
 
 		<img
+			{{ className ? 'class="' ~ className ~ '"' }}
 			src="{{ default }}"
 			{{ default2x ? 'srcset="' ~ default2x ~ ' 2x"' }}
-			{{ imgAttributes }}
+			alt="{{ alt }}"
+			{{ not alt ? 'aria-hidden="true"' }}
+			{{ not immediately ? 'loading="lazy"' }}
 		/>
 	</picture>
 {% endwith %}

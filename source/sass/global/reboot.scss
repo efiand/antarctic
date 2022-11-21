@@ -24,7 +24,7 @@ html {
   // https://transfonter.org/ - включите настройку https://prnt.sc/12rnt6g и переконвертируйте шрифт
   color: $color-tangaroa;
 
-  @include custom-scrollbar(currentColor, $color-link-water);
+  @include custom-scrollbar(currentColor, $color-solitude);
 }
 
 body {

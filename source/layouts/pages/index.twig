@@ -1,4 +1,7 @@
 {% extends '../main.twig' %}
 
 {% block main %}
+	{% include '../components/content.twig' with about %}
+
+	{% include '../components/list.twig' with advantages %}
 {% endblock %}

@@ -1,0 +1,13 @@
+<section class="list" {{ background ? mixin.background(background, backgroundColor) }}>
+	<div class="container">
+		<h2 class="list__heading">{{ heading }}</h2>
+
+		<ul class="list__items">
+			{% for item in list %}
+				<li class="list__item" style="--icon: url('../img/sprite.svg#icon-{{ item.alias }}')">
+					{{ item.content }}
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</section>

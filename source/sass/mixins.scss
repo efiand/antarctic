@@ -156,6 +156,18 @@
   }
 }
 
+@mixin section-paddings {
+  padding: 120px 0;
+
+  @include vp-1023 {
+    padding: 100px 0;
+  }
+
+  @include vp-767 {
+    padding: 65px 0;
+  }
+}
+
 // Desktop first
 
 @mixin vp-1023 {
