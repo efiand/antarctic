@@ -134,6 +134,28 @@
   mask: url("../img/sprite.svg##{$icon}") no-repeat center / 100%;
 }
 
+@mixin custom-scrollbar($color-thumb, $color-track) {
+  scrollbar-color: $color-thumb $color-track;
+  scrollbar-width: thin;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: $color-track;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: $color-track;
+    border: 3px solid $color-alice-blue;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-thumb;
+    border: none;
+    border-radius: 2px;
+  }
+}
+
 // Desktop first
 
 @mixin vp-1023 {
