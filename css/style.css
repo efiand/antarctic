@@ -436,6 +436,25 @@ html {
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
   color: #011c40;
+  scrollbar-color: currentColor #cad2df;
+  scrollbar-width: thin;
+}
+
+html::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: #cad2df;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: #cad2df;
+  border: 3px solid #f9fbfd;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: currentColor;
+  border: none;
+  border-radius: 2px;
 }
 
 body {
