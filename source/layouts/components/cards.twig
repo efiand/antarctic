@@ -1,0 +1,19 @@
+<section class="cards" {{ id ? 'id="' ~ id ~ '"' }}>
+	<div class="container">
+		<h2 class="cards__heading">{{ heading }}</h2>
+
+		<ul class="cards__items">
+			{% for item in list %}
+				<li class="cards__item">
+					<div class="cards__content">
+						<h3 class="cards__item-heading">{{ item.heading }}</h3>
+						{{ item.content }}
+						<a class="cards__btn btn" href="{{ item.url }}">{{ linkText }}</a>
+					</div>
+
+					{% include 'picture.twig' with item.image %}
+				</li>
+			{% endfor %}
+		</ul>
+	</div>
+</section>

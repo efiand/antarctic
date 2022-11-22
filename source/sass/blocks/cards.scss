@@ -1,0 +1,130 @@
+.cards {
+  @include section-paddings;
+}
+
+.cards__heading {
+  @include heading;
+
+  @media (min-width: 1024px) {
+    margin-top: -34px; // Pixelperfect
+  }
+}
+
+.cards__items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 260px);
+  gap: 30px;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  @include vp-1023 {
+    grid-template-columns: repeat(auto-fill, 309px);
+  }
+
+  @include vp-767 {
+    grid-template-columns: repeat(2, minmax(270px, 309px));
+  }
+
+  @include vp-599 {
+    grid-template-columns: minmax(270px, 309px);
+  }
+}
+
+.cards__item {
+  position: relative;
+  height: 386px;
+  color: $color-alice-blue;
+  background-color: $color-tangaroa;
+
+  img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.cards__content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 25px 35px;
+  overflow-y: auto;
+
+  @include custom-scrollbar(currentColor, $color-tangaroa);
+
+  @include vp-1023 {
+    padding-right: 35px;
+    padding-left: 35px;
+  }
+
+  @include vp-767 {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+
+  h3 {
+    margin: auto 5px -12px;
+    font-weight: 500;
+    font-size: 18px;
+
+    @include vp-1023 {
+      margin: auto 0 -7px;
+    }
+
+    @include vp-767 {
+      margin-bottom: -17px;
+    }
+  }
+
+  h4 {
+    display: none;
+    margin: 0;
+    font-weight: 500;
+    font-size: 14px;
+  }
+
+  p {
+    display: none;
+    margin: 0 0 10px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+}
+
+.cards__btn {
+  display: none;
+  margin-top: 15px;
+
+  @include vp-1023 {
+    margin-top: 18px;
+  }
+}
+
+.cards__item:hover,
+.cards__item:focus-within {
+  box-shadow: 0 4px 35px rgba($color-tangaroa, 0.15);
+
+  img {
+    display: none;
+  }
+
+  h3 {
+    margin: 0 0 14px;
+  }
+
+  h4,
+  p,
+  .cards__btn {
+    display: block;
+  }
+}

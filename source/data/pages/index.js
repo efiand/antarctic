@@ -1,16 +1,5 @@
 import html from '../../js/utils/html.js';
-
-const getImages = (filename, additions = {}) =>
-  Object.assign(additions, {
-    default: `img/${filename}.jpg`,
-    default2x: `img/${filename}@2x.jpg`,
-    webp: `img/${filename}.webp`,
-    webp2x: `img/${filename}@2x.webp`,
-    webpMobile: `img/${filename}-mobile.webp`,
-    webpMobile2x: `img/${filename}-mobile@2x.webp`,
-    webpTablet: `img/${filename}-tablet.webp`,
-    webpTablet2x: `img/${filename}-tablet@2x.webp`,
-  });
+import {getImages} from '../global.js';
 
 export default {
   promo: {
@@ -30,6 +19,7 @@ export default {
     }),
   },
   advantages: {
+    id: 'advantages',
     heading: 'Преимущества',
     list: [
       {
@@ -59,5 +49,105 @@ export default {
     ],
     background: getImages('advantages'),
     backgroundColor: '#e3ecf6',
+  },
+  offers: {
+    id: 'upcoming',
+    heading: 'Ближайшие круизы',
+    list: [
+      {
+        content: html`<h4>Маршрут</h4>
+          <p>Аргентина - Фолклендские острова - Антарктида</p>
+          <h4>Порт отправления</h4>
+          <p>Ушуайя</p>
+          <h4>Продолжительность</h4>
+          <p>11 дней</p>
+          <h4>Цена</h4>
+          <p>от 11500 $</p>`,
+        heading: 'Круиз “Астория”',
+      },
+      {
+        content: html`<h4>Маршрут</h4>
+          <p>Аргентина - Фолклендские острова - Антарктида - Чили</p>
+          <h4>Порт отправления</h4>
+          <p>Буэнос-Айрес</p>
+          <h4>Продолжительность</h4>
+          <p>20 дней</p>
+          <h4>Цена</h4>
+          <p>от 14500 $</p>`,
+        heading: 'Круиз “Элайн”',
+      },
+      {
+        content: html`<h4>Маршрут</h4>
+          <p>Аргентина - Южная Георгия и Южные Сандвичевы Острова - Антарктида</p>
+          <h4>Порт отправления</h4>
+          <p>Ушуайя</p>
+          <h4>Продолжительность</h4>
+          <p>15 дней</p>
+          <h4>Цена</h4>
+          <p>от 14500 $</p>`,
+        heading: 'Круиз “Атлантис”',
+      },
+      {
+        content: html`<h4>Маршрут</h4>
+          <p>Чили - Антарктида</p>
+          <h4>Порт отправления</h4>
+          <p>Пунта-Аренас</p>
+          <h4>Продолжительность</h4>
+          <p>13 дней</p>
+          <h4>Цена</h4>
+          <p>от 9700 $</p>`,
+        heading: 'Круиз “Одиссей”',
+      },
+      {
+        content: html`<h4>Маршрут</h4>
+          <p>Аргентина - Фолклендские острова - Южная Георгия - Антарктида</p>
+          <h4>Порт отправления</h4>
+          <p>Ушуайя</p>
+          <h4>Продолжительность</h4>
+          <p>21 день</p>
+          <h4>Цена</h4>
+          <p>от 18600 $</p>`,
+        heading: 'Круиз “Олимпия”',
+      },
+      {
+        content: html`<h4>Маршрут</h4>
+          <p>Аргентина - Антарктида - Чили</p>
+          <h4>Порт отправления</h4>
+          <p>Ушуайя</p>
+          <h4>Продолжительность</h4>
+          <p>14 дней</p>
+          <h4>Цена</h4>
+          <p>от 11700 $</p>`,
+        heading: 'Круиз “Аврора”',
+      },
+      {
+        content: html`<h4>Маршрут</h4>
+          <p>Чили - Южная Георгия - Антарктида - Аргентина</p>
+          <h4>Порт отправления</h4>
+          <p>Пунта-Аренас</p>
+          <h4>Продолжительность</h4>
+          <p>17 дней</p>
+          <h4>Цена</h4>
+          <p>от 12500 $</p>`,
+        heading: 'Круиз “Леонор”',
+      },
+      {
+        content: html`<h4>Маршрут</h4>
+          <p>Аргентина - Антарктида</p>
+          <h4>Порт отправления</h4>
+          <p>Ушуайя</p>
+          <h4>Продолжительность</h4>
+          <p>11 дней</p>
+          <h4>Цена</h4>
+          <p>от 12300 $</p>`,
+        heading: 'Круиз “Минион - 1”',
+      },
+    ].map(({content, heading}, i) => ({
+      content,
+      heading,
+      image: getImages(`offer-${i > 6 ? 2 : i + 1}`, {alt: `${heading}.`}, false, false),
+      url: '#!',
+    })),
+    linkText: 'Забронировать',
   },
 };
