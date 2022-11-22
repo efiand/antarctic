@@ -1234,7 +1234,7 @@ input[type=number]::-webkit-inner-spin-button {
   }
 
   .cards__items {
-    grid-template-columns: repeat(auto-fill, 270px);
+    grid-template-columns: repeat(2, minmax(270px, 309px));
   }
 
   .cards__content {
@@ -1375,6 +1375,12 @@ input[type=number]::-webkit-inner-spin-button {
   .page-header.no-js:focus-within .page-header__nav,
   .page-header.is-active .page-header__nav {
     display: block;
+  }
+}
+
+@media (max-width: 599px) {
+  .cards__items {
+    grid-template-columns: minmax(270px, 309px);
   }
 }
 
