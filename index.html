@@ -267,6 +267,37 @@
           </ul>
         </div>
       </section>
+
+      <section class="form-section" style="--bg-default: url('../img/form-section.jpg');--bg-default2x: url('../img/form-section@2x.jpg');--bg-webp: url('../img/form-section.webp');--bg-webp2x: url('../img/form-section@2x.webp');--bg-webpTablet: url('../img/form-section-tablet.webp');--bg-webpTablet2x: url('../img/form-section-tablet@2x.webp');--bg-webpMobile: url('../img/form-section-mobile.webp');--bg-webpMobile2x: url('../img/form-section-mobile@2x.webp');--bg-color: #e3ecf6;">
+        <div class="form-section__inner container">
+          <div class="form-section__content">
+            <h2>Раннее бронирование</h2>
+            <p>Забронируйте тур за&nbsp;3-6 месяцев до&nbsp;даты выезда и&nbsp;сэкономьте до&nbsp;50%</p>
+          </div>
+          <form class="form form-section__form" action="https://echo.htmlacademy.ru" method="post" data-form="">
+            <p class="form__description">Оставьте заявку и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время</p>
+            <p class="form__group">
+              <input id="order-name" name="name" type="text" placeholder="Имя" pattern="^[A-Za-zА-Яа-яЁё\- ]+$" required="">
+              <label for="order-name">Имя</label>
+            </p>
+            <p class="form__group">
+              <input id="order-phone" name="phone" type="tel" placeholder="Телефон" pattern="^\+?\d{7,13}$" required="">
+              <label for="order-phone">Телефон</label>
+            </p>
+            <p class="form__group">
+              <input id="order-email" name="email" type="email" placeholder="Email" required="">
+              <label for="order-email">Email</label>
+            </p>
+            <p class="form__group">
+              <label>
+                <input name="agree" type="checkbox" checked="" required="">
+                Я&nbsp;согласен на&nbsp;обработку моих персональных данных
+              </label>
+            </p>
+            <button class="form__btn btn" type="submit">Оставить заявку</button>
+          </form>
+        </div>
+      </section>
     </main>
 
     <footer class="page-footer">
