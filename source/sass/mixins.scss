@@ -29,26 +29,6 @@
   }
 }
 
-@mixin btn {
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  font-family: $ff-montserrat;
-  text-transform: uppercase;
-  text-align: center;
-  color: $color-alice-blue;
-  background-color: transparent;
-  border-radius: 3px;
-  cursor: pointer;
-  user-select: none;
-
-  &:disabled {
-    opacity: 0.5;
-    pointer-events: none;
-  }
-
-  @include default-interactive;
-}
-
 @mixin retina {
   @media (min-resolution: $retina-dpi), (min-resolution: $retina-dppx) {
     @content;
@@ -165,6 +145,23 @@
 
   @include vp-767 {
     padding: 65px 0;
+  }
+}
+
+@mixin heading {
+  margin: -10px 0 48px;
+  font-weight: 600;
+  font-size: 28px;
+  text-align: center;
+
+  @include vp-1023 {
+    margin: -12px 0 50px;
+    font-size: 26px;
+  }
+
+  @include vp-767 {
+    margin: -8px 0 30px;
+    font-size: 24px;
   }
 }
 

@@ -1,4 +1,4 @@
-<section class="list" {{ background ? mixin.background(background, backgroundColor) }}>
+<section class="list" {{ id ? 'id="' ~ id ~ '"' }} {{ background ? mixin.background(background, backgroundColor) }}>
 	<div class="container">
 		<h2 class="list__heading">{{ heading }}</h2>
 

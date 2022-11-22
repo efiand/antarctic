@@ -113,3 +113,8 @@ input[type="number"] {
     appearance: none;
   }
 }
+
+:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}

@@ -8,20 +8,7 @@
 }
 
 .list__heading {
-  margin: -10px 0 48px;
-  font-weight: 600;
-  font-size: 28px;
-  text-align: center;
-
-  @include vp-1023 {
-    margin: -12px 0 50px;
-    font-size: 26px;
-  }
-
-  @include vp-767 {
-    margin: -8px 0 30px;
-    font-size: 24px;
-  }
+  @include heading;
 }
 
 .list__items {
