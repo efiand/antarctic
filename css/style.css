@@ -545,6 +545,11 @@ input[type=number]::-webkit-inner-spin-button {
   appearance: none;
 }
 
+:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -591,24 +596,20 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .btn {
-  font-weight: 700;
-  letter-spacing: 0.05em;
+  padding: 9px 20px 10px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.5;
   font-family: "Montserrat", "Arial", sans-serif;
-  text-transform: uppercase;
   text-align: center;
-  color: #f9fbfd;
-  background-color: transparent;
-  border-radius: 3px;
+  color: #011c40;
+  background-color: #f9fbfd;
+  border-radius: 0;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
   transition: opacity 0.3s ease;
-}
-
-.btn:disabled {
-  opacity: 0.5;
-  pointer-events: none;
 }
 
 .btn:focus-visible {
@@ -619,6 +620,125 @@ input[type=number]::-webkit-inner-spin-button {
   .btn.focus-visible:focus {
     opacity: 0.8;
   }
+}
+
+.cards {
+  padding: 120px 0;
+}
+
+.cards__heading {
+  margin: -10px 0 48px;
+  font-weight: 600;
+  font-size: 28px;
+  text-align: center;
+}
+
+.cards__items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 260px);
+  gap: 30px;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cards__item {
+  position: relative;
+  height: 386px;
+  color: #f9fbfd;
+  background-color: #011c40;
+}
+
+.cards__item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.cards__content {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 28px 25px 35px;
+  overflow-y: auto;
+  scrollbar-color: currentColor #011c40;
+  scrollbar-width: thin;
+}
+
+.cards__content::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background-color: #011c40;
+}
+
+.cards__content::-webkit-scrollbar-track {
+  background-color: #011c40;
+  border: 3px solid #f9fbfd;
+}
+
+.cards__content::-webkit-scrollbar-thumb {
+  background-color: currentColor;
+  border: none;
+  border-radius: 2px;
+}
+
+.cards__content h3 {
+  margin: auto 5px -12px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.cards__content h4 {
+  display: none;
+  margin: 0;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.cards__content p {
+  display: none;
+  margin: 0 0 10px;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+.cards__btn {
+  display: none;
+  margin-top: 15px;
+}
+
+.cards__item:hover,
+.cards__item:focus-within {
+  box-shadow: 0 4px 35px rgba(1, 28, 64, 0.15);
+}
+
+.cards__item:hover img,
+.cards__item:focus-within img {
+  display: none;
+}
+
+.cards__item:hover h3,
+.cards__item:focus-within h3 {
+  margin: 0 0 14px;
+}
+
+.cards__item:hover h4,
+.cards__item:hover p,
+.cards__item:hover .cards__btn,
+.cards__item:focus-within h4,
+.cards__item:focus-within p,
+.cards__item:focus-within .cards__btn {
+  display: block;
 }
 
 .content {
@@ -978,7 +1098,39 @@ input[type=number]::-webkit-inner-spin-button {
   }
 }
 
+@media (min-width: 1024px) {
+  .cards__heading {
+    margin-top: -34px;
+  }
+}
+
 @media (max-width: 1023px) {
+  .cards {
+    padding: 100px 0;
+  }
+
+  .cards__heading {
+    margin: -12px 0 50px;
+    font-size: 26px;
+  }
+
+  .cards__items {
+    grid-template-columns: repeat(auto-fill, 309px);
+  }
+
+  .cards__content {
+    padding-right: 35px;
+    padding-left: 35px;
+  }
+
+  .cards__content h3 {
+    margin: auto 0 -7px;
+  }
+
+  .cards__btn {
+    margin-top: 18px;
+  }
+
   .content {
     padding: 100px 0;
   }
@@ -1070,6 +1222,28 @@ input[type=number]::-webkit-inner-spin-button {
 
   .container {
     padding: 0 15px;
+  }
+
+  .cards {
+    padding: 65px 0;
+  }
+
+  .cards__heading {
+    margin: -8px 0 30px;
+    font-size: 24px;
+  }
+
+  .cards__items {
+    grid-template-columns: repeat(auto-fill, 270px);
+  }
+
+  .cards__content {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+
+  .cards__content h3 {
+    margin-bottom: -17px;
   }
 
   .content {
