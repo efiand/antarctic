@@ -276,22 +276,26 @@
           </div>
           <form class="form form-section__form" action="https://echo.htmlacademy.ru" method="post" data-form="">
             <p class="form__description">Оставьте заявку и&nbsp;мы&nbsp;свяжемся с&nbsp;вами в&nbsp;ближайшее время</p>
-            <p class="form__group">
+            <p class="form__group is-validable" data-group="">
               <input id="order-name" name="name" type="text" placeholder="Имя" pattern="^[A-Za-zА-Яа-яЁё\- ]+$" required="">
+              <strong>Введите имя из&nbsp;буквенных символов, разделяемых пробелами или дефисами</strong>
               <label for="order-name">Имя</label>
             </p>
-            <p class="form__group">
+            <p class="form__group is-validable" data-group="">
               <input id="order-phone" name="phone" type="tel" placeholder="Телефон" pattern="^\+?\d{7,13}$" required="">
+              <strong>Введите от&nbsp;7 до&nbsp;13 цифр</strong>
               <label for="order-phone">Телефон</label>
             </p>
-            <p class="form__group">
+            <p class="form__group is-validable" data-group="">
               <input id="order-email" name="email" type="email" placeholder="Email" required="">
+              <strong>Введите валидный E-mail</strong>
               <label for="order-email">Email</label>
             </p>
-            <p class="form__group">
+            <p class="form__group is-validable" data-group="">
               <label>
                 <input name="agree" type="checkbox" checked="" required="">
-                Я&nbsp;согласен на&nbsp;обработку моих персональных данных
+                <span>Я&nbsp;согласен на&nbsp;обработку моих персональных данных</span>
+                <strong>Согласие на&nbsp;обработку обязательно</strong>
               </label>
             </p>
             <button class="form__btn btn" type="submit">Оставить заявку</button>
