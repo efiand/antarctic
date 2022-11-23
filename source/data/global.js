@@ -20,6 +20,7 @@ export const getImages = (filename, additions = {}, useTablet = true, useMobile 
 };
 
 export default {
+  pageData: '{}',
   description: 'Сайт по организации туров в Антарктику.',
   projectName: 'Антарктика',
   navLinks: [

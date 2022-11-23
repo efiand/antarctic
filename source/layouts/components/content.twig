@@ -1,7 +1,15 @@
-<section class="content">
-	<div class="content__inner container">
-		<div>{{ content }}</div>
+<section class="content {{ headless ? 'content--headless' }}" {{ id ? 'id="' ~ id ~ '"' }}>
+	<div class="content__inner {{ map ? 'content__inner--reverse' }} container">
+		<div {{ contains(content, '.svg#') ? 'class="content__iconable"' }}>
+			{{ content }}
+		</div>
 
-		{% include 'picture.twig' with image %}
+		{% if map %}
+			<div class="content__map map" id="{{ map.id }}" data-map>
+				{% include 'picture.twig' with map.image %}
+			</div>
+		{% else %}
+			{% include 'picture.twig' with image %}
+		{% endif %}
 	</div>
 </section>

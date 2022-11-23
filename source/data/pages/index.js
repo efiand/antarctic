@@ -1,7 +1,29 @@
 import html from '../../js/utils/html.js';
 import {getImages} from '../global.js';
 
+const pageData = {
+  maps: {
+    contactsMap: {
+      initials: {
+        center: [59.9387165, 30.3230474],
+        controls: [],
+        zoom: 16,
+      },
+      placemark: [
+        {hintContent: 'г. Санкт Петербург, ул. Большая Конюшенная, 19/8'},
+        {
+          iconImageHref: 'img/sprite.svg#icon-pin',
+          iconImageSize: [18, 22],
+          iconLayout: 'default#image',
+          iconShadow: false,
+        },
+      ],
+    },
+  },
+};
+
 export default {
+  pageData: JSON.stringify(pageData),
   promo: {
     content: html`<h1>Круизы в Антарктику</h1>
       <p>Волшебный мир айсбергов&nbsp;и пингвинов</p>`,
@@ -183,6 +205,24 @@ export default {
       ],
       method: 'post',
       submitText: 'Оставить заявку',
+    },
+  },
+  contacts: {
+    id: 'contacts',
+    content: html`<h2>Контакты</h2>
+      <p><b>У вас ещё остались вопросы или сомнения? Приезжайте к нам в офис и мы вам все расскажем.</b></p>
+      <p>
+        <img src="img/sprite.svg#icon-pin" width="18" height="22" alt="" aria-hidden="true" />
+        г. Санкт Петербург, ул.&nbsp;Большая&nbsp;Конюшенная,&nbsp;19/8
+      </p>
+      <p>
+        <img src="img/sprite.svg#icon-tel" width="18" height="18" alt="" aria-hidden="true" />
+        <a href="tel:+78002000000">8-800-200-00-00</a>
+      </p>`,
+    headless: true,
+    map: {
+      id: 'contactsMap',
+      image: getImages('map', {alt: 'Адрес на карте.'}, false, false),
     },
   },
 };

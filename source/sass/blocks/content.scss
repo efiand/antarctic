@@ -22,6 +22,39 @@
 
   p {
     margin: 0;
+
+    + p {
+      margin-top: 21px;
+    }
+
+    b:only-child {
+      display: block;
+      margin-bottom: 11px;
+      font-weight: 500;
+      font-size: 18px;
+
+      @include vp-1023 {
+        margin: -3px 0 6px;
+      }
+
+      @include vp-767 {
+        margin-top: -7px;
+      }
+    }
+  }
+
+  a {
+    @include default-interactive;
+
+    @include hover {
+      text-decoration: underline;
+    }
+  }
+
+  &--headless {
+    h2 {
+      @include visually-hidden;
+    }
   }
 }
 
@@ -44,5 +77,65 @@
     grid-template-columns: 1fr;
     gap: 43px;
     margin-bottom: 20px;
+  }
+
+  &--reverse {
+    grid-template-columns: 560px 1fr;
+    gap: 8.6%;
+    margin-bottom: 0;
+
+    @include vp-1023 {
+      grid-template-columns: 324px 1fr;
+      gap: 30px;
+      align-items: center;
+      margin-bottom: 0;
+    }
+
+    @include vp-767 {
+      gap: 36px;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.content__map {
+  order: -1;
+  height: 306px;
+  background-color: $color-floral-white;
+
+  @include vp-1023 {
+    height: 335px;
+  }
+
+  @include vp-767 {
+    height: 316px;
+    order: initial;
+  }
+
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
+
+  &.is-ready {
+    img {
+      display: none;
+    }
+  }
+}
+
+.content__iconable {
+  p {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  img {
+    flex-shrink: 0;
+    margin-right: 10px;
+
+    @include vp-1023 {
+      margin-top: 4px;
+    }
   }
 }
