@@ -24,7 +24,7 @@
     <div class="firstscreen page__firstscreen" style="--bg-default: url('../img/firstscreen.jpg');--bg-default2x: url('../img/firstscreen@2x.jpg');--bg-webp: url('../img/firstscreen.webp');--bg-webp2x: url('../img/firstscreen@2x.webp');--bg-webpTablet: url('../img/firstscreen-tablet.webp');--bg-webpTablet2x: url('../img/firstscreen-tablet@2x.webp');--bg-webpMobile: url('../img/firstscreen-mobile.webp');--bg-webpMobile2x: url('../img/firstscreen-mobile@2x.webp');">
       <div class="container">
         <header class="page-header firstscreen__header no-js" data-page-header="">
-          <a class="page-header__logo logo" aria-hidden="true">
+          <a class="logo" aria-hidden="true">
             <span class="visually-hidden">На&nbsp;главную.</span>
             <svg width="70" height="38" viewbox="0 0 70 38" role="img" focusable="false">
               <use xlink:href="img/svg/logo.svg#logo"></use>
@@ -34,7 +34,7 @@
             <span class="visually-hidden">Переключить режим отображения меню.</span>
           </button>
           <nav class="page-header__nav" id="nav">
-            <ul class="nav page-header__nav-list">
+            <ul class="nav page-header__nav-list ">
               <li>
                 <a href="#advantages" class="nav__link">
                   Преимущества
@@ -303,7 +303,7 @@
         </div>
       </section>
 
-      <section class="content content--headless">
+      <section class="content content--headless" id="contacts">
         <div class="content__inner content__inner--reverse container">
           <div class="content__iconable">
             <h2>Контакты</h2>
@@ -329,19 +329,47 @@
 
     <footer class="page-footer">
       <div class="page-footer__inner container">
+        <a class="logo" aria-hidden="true">
+          <span class="visually-hidden">На&nbsp;главную.</span>
+          <svg width="70" height="38" viewbox="0 0 70 38" role="img" focusable="false">
+            <use xlink:href="img/svg/logo.svg#logo"></use>
+          </svg>
+        </a>
+        <ul class="nav page-footer__nav-list nav--alter">
+          <li>
+            <a href="#advantages" class="nav__link">
+              Преимущества
+            </a>
+          </li>
+          <li>
+            <a href="#upcoming" class="nav__link">
+              Направления
+            </a>
+          </li>
+          <li>
+            <a href="#upcoming" class="nav__link">
+              Ближайшие круизы
+            </a>
+          </li>
+          <li>
+            <a href="#contacts" class="nav__link">
+              Контакты
+            </a>
+          </li>
+        </ul>
         <ul class="socials page-footer__socials">
           <li>
-            <a class="socials__link socials__link--ok" href="#!">
+            <a class="socials__link socials__link--ok socials__link--narrow" href="#!">
               <span class="visually-hidden">Мы&nbsp;в&nbsp;Одноклассниках.</span>
             </a>
           </li>
           <li>
-            <a class="socials__link socials__link--dzen" href="#!">
+            <a class="socials__link socials__link--dzen " href="#!">
               <span class="visually-hidden">Мы&nbsp;в&nbsp;Яндекс.Дзен</span>
             </a>
           </li>
           <li>
-            <a class="socials__link socials__link--reddit" href="#!">
+            <a class="socials__link socials__link--reddit " href="#!">
               <span class="visually-hidden">Мы&nbsp;в&nbsp;Reddit</span>
             </a>
           </li>
