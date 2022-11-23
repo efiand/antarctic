@@ -757,12 +757,68 @@ input[type=number]::-webkit-inner-spin-button {
   margin: 0;
 }
 
+.content p + p {
+  margin-top: 21px;
+}
+
+.content p b:only-child {
+  display: block;
+  margin-bottom: 11px;
+  font-weight: 500;
+  font-size: 18px;
+}
+
+.content--headless h2 {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
+}
+
 .content__inner {
   display: grid;
   grid-template-columns: 1fr 560px;
   gap: 64px;
   align-items: center;
   margin-bottom: 25px;
+}
+
+.content__inner--reverse {
+  grid-template-columns: 560px 1fr;
+  gap: 100px;
+}
+
+.content__map {
+  order: -1;
+  height: 306px;
+  background-color: #fcfaf6;
+}
+
+.content__map img {
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.content__map.is-ready img {
+  display: none;
+}
+
+.content__iconable p {
+  display: flex;
+  align-items: flex-start;
+}
+
+.content__iconable img {
+  flex-shrink: 0;
+  margin-right: 10px;
 }
 
 .firstscreen {
@@ -928,6 +984,10 @@ input[type=number]::-webkit-inner-spin-button {
 
 .form__group label [type=checkbox] {
   margin-right: 5px;
+}
+
+.form__group label [type=checkbox] + span {
+  width: calc(100% - 24px);
 }
 
 .form__group label[for] {
@@ -1343,12 +1403,30 @@ input[type=number]::-webkit-inner-spin-button {
     line-height: 36px;
   }
 
+  .content p b:only-child {
+    margin: -3px 0 6px;
+  }
+
   .content__inner {
     grid-template-columns: 1fr 324px;
     align-items: start;
     gap: 25px;
     margin-bottom: -5px;
     padding-right: 50px;
+  }
+
+  .content__inner--reverse {
+    grid-template-columns: 324px 1fr;
+    gap: 30px;
+    align-items: center;
+  }
+
+  .content__map {
+    height: 335px;
+  }
+
+  .content__iconable img {
+    margin-top: 4px;
   }
 
   .firstscreen__promo {
@@ -1476,10 +1554,23 @@ input[type=number]::-webkit-inner-spin-button {
     line-height: 34px;
   }
 
+  .content p b:only-child {
+    margin-top: -7px;
+  }
+
   .content__inner {
     grid-template-columns: 1fr;
     gap: 43px;
     margin-bottom: 20px;
+  }
+
+  .content__inner--reverse {
+    gap: 36px;
+  }
+
+  .content__map {
+    height: 316px;
+    order: initial;
   }
 
   .firstscreen .no-js:hover + .firstscreen__promo,
@@ -1526,6 +1617,10 @@ input[type=number]::-webkit-inner-spin-button {
 
   .form__group label [type=checkbox] {
     margin-right: 8px;
+  }
+
+  .form__group label [type=checkbox] + span {
+    width: calc(100% - 28px);
   }
 
   .form__btn {
