@@ -1,0 +1,9 @@
+<section class="form-section" {{ background ? mixin.background(background, backgroundColor) }}>
+	<div class="form-section__inner container">
+		<div class="form-section__content">
+			{{ content }}
+		</div>
+
+		{% include 'form.twig' with form|merge({ bemMix: 'form-section__form' }) %}
+	</div>
+</section>

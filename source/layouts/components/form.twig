@@ -1,0 +1,11 @@
+<form class="form {{ bemMix }}" action="{{ action }}" method="{{ method ?? 'get'}}" data-form>
+	<p class="form__description">{{ description }}</p>
+
+	{% for field in fields %}
+		<p class="form__group is-validable" data-group>
+			{{ field }}
+		</p>
+	{% endfor %}
+
+	<button class="form__btn btn" type="submit">{{ submitText }}</button>
+</form>

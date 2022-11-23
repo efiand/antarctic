@@ -150,4 +150,39 @@ export default {
     })),
     linkText: 'Забронировать',
   },
+  order: {
+    background: getImages('form-section'),
+    backgroundColor: '#e3ecf6',
+    content: html`<h2>Раннее бронирование</h2>
+      <p>Забронируйте тур за 3-6 месяцев до даты выезда и сэкономьте до 50%</p>`,
+    form: {
+      action: 'https://echo.htmlacademy.ru',
+      description: 'Оставьте заявку и мы свяжемся с вами в ближайшее время',
+      fields: [
+        html`<input
+            id="order-name"
+            name="name"
+            type="text"
+            placeholder="Имя"
+            pattern="^[A-Za-zА-Яа-яЁё\\- ]+$"
+            required
+          />
+          <strong>Введите имя из буквенных символов, разделяемых пробелами или дефисами</strong>
+          <label for="order-name">Имя</label>`,
+        html`<input id="order-phone" name="phone" type="tel" placeholder="Телефон" pattern="^\\+?\\d{7,13}$" required />
+          <strong>Введите от 7 до 13 цифр</strong>
+          <label for="order-phone">Телефон</label>`,
+        html`<input id="order-email" name="email" type="email" placeholder="Email" required />
+          <strong>Введите валидный E-mail</strong>
+          <label for="order-email">Email</label>`,
+        html`<label>
+          <input name="agree" type="checkbox" checked required />
+          <span>Я согласен на обработку моих&nbsp;персональных&nbsp;данных</span>
+          <strong>Согласие на обработку обязательно</strong>
+        </label>`,
+      ],
+      method: 'post',
+      submitText: 'Оставить заявку',
+    },
+  },
 };

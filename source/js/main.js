@@ -1,9 +1,12 @@
+import initForm from './modules/form.js';
 import initPageHeader from './modules/page-header.js';
 
 document.querySelectorAll('.page-header').forEach(initPageHeader);
 
 // в load следует добавить скрипты, не участвующие в работе первого экрана
-window.addEventListener('load', () => {});
+window.addEventListener('load', () => {
+  document.querySelectorAll('[data-form]').forEach(initForm);
+});
 
 // привязывайте js не на классы, а на дата атрибуты (data-validate)
 

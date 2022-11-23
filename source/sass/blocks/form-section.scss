@@ -1,0 +1,66 @@
+.form-section {
+  background-color: var(--bg-color, transparent);
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  @include section-paddings(50px);
+  @include background-image;
+}
+
+.form-section__inner {
+  display: grid;
+  grid-template-columns: 1fr 403px;
+  gap: 50px;
+  align-items: center;
+  padding-right: 105px;
+  padding-left: 105px;
+
+  @include vp-1023 {
+    grid-template-columns: 1fr;
+    gap: 53px;
+  }
+
+  @include vp-767 {
+    gap: 34px;
+  }
+}
+
+.form-section__content {
+  @include vp-1023 {
+    text-align: center;
+  }
+
+  h2 {
+    margin: -8px 0 8px;
+    font-weight: 700;
+    font-size: 40px;
+
+    @include vp-1023 {
+      margin: -12px 0 5px;
+      font-size: 34px;
+    }
+
+    @include vp-767 {
+      margin: -7px 0 14px;
+      font-size: 24px;
+      line-height: 31px;
+    }
+  }
+
+  p {
+    margin: 0;
+    font-size: 18px;
+
+    @include vp-767 {
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+}
+
+.form-section__form {
+  max-width: 403px;
+  margin: 0 auto;
+
+  @include shadow(45px);
+}
