@@ -29,6 +29,7 @@
 
   @include vp-599 {
     grid-template-columns: minmax(270px, 309px);
+    padding: 0 10px;
   }
 }
 
@@ -112,7 +113,7 @@
 
 .cards__item:hover,
 .cards__item:focus-within {
-  box-shadow: 0 4px 35px rgba($color-tangaroa, 0.15);
+  @include shadow;
 
   img {
     display: none;

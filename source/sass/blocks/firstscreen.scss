@@ -1,10 +1,10 @@
 .firstscreen {
-  @include background-image;
-
   color: $color-alice-blue;
   background-color: $color-tangaroa;
   background-position: 50% 100%;
   background-size: cover;
+
+  @include background-image;
 
   .no-js:hover,
   .no-js:focus-within,

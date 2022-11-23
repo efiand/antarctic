@@ -136,8 +136,8 @@
   }
 }
 
-@mixin section-paddings {
-  padding: 120px 0;
+@mixin section-paddings($desktop-vertical: 120px) {
+  padding: $desktop-vertical 0;
 
   @include vp-1023 {
     padding: 100px 0;
@@ -163,6 +163,10 @@
     margin: -8px 0 30px;
     font-size: 24px;
   }
+}
+
+@mixin shadow($radius: 35px) {
+  box-shadow: 0 4px $radius rgba($color-tangaroa, 0.15);
 }
 
 // Desktop first
