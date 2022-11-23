@@ -1,3 +1,52 @@
 .page-footer {
+  padding: 50px 0;
+  color: $color-alice-blue;
+  background-color: $color-tangaroa;
+
+  @include vp-1023 {
+    padding: 40px 0;
+  }
+
+  @include vp-767 {
+    padding-bottom: 28px;
+  }
+}
+
+.page-footer__inner {
   display: grid;
+  grid-template-columns: min-content 4fr 1fr;
+  gap: 8px;
+  align-items: center;
+
+  @include vp-1023 {
+    gap: 0;
+  }
+
+  @include vp-767 {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
+
+.page-footer__nav-list {
+  margin: 0;
+
+  @include vp-767 {
+    margin-top: 12px;
+  }
+}
+
+.page-footer__socials {
+  justify-self: end;
+  margin: 0;
+  transform: translate(9px, 2px);
+
+  @include vp-1023 {
+    transform: translateX(12px);
+  }
+
+  @include vp-767 {
+    justify-self: start;
+    transform: translateX(-10px);
+  }
 }

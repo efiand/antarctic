@@ -4,9 +4,17 @@
   align-items: flex-start;
   padding: 0;
   list-style: none;
+  line-height: 20px;
+
+  @include vp-1023 {
+    font-size: 14px;
+    line-height: 17px;
+  }
 
   @include vp-767 {
     flex-direction: column;
+    font-size: 18px;
+    line-height: 22px;
   }
 }
 
@@ -15,19 +23,33 @@
   margin: 0 0 0 33px;
   padding: 10px 0;
   font-weight: 500;
-  line-height: 20px;
 
   @include default-interactive;
 
   @include vp-1023 {
     margin-left: 24px;
-    font-size: 14px;
-    line-height: 17px;
   }
 
   @include vp-767 {
     margin: 0 0 8px 10px;
-    font-size: 18px;
-    line-height: 22px;
+  }
+}
+
+.nav--alter {
+  @include vp-1023 {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  @include vp-767 {
+    font-size: 12px;
+    line-height: 15px;
+  }
+
+  .nav__link {
+    @include vp-767 {
+      margin: 0;
+      padding: 8px 0 9px;
+    }
   }
 }

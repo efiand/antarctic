@@ -44,6 +44,7 @@ export default {
   socials: [
     {
       id: 'ok',
+      narrow: true,
       title: 'Мы в Одноклассниках.',
       url: '#!',
     },

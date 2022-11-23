@@ -1,7 +1,7 @@
 <ul class="socials {{ bemMix }}">
 	{% for link in socials %}
 		<li>
-			<a class="socials__link socials__link--{{ link.id }}" href="{{ link.url }}">
+			<a class="socials__link socials__link--{{ link.id }} {{ link.narrow ? 'socials__link--narrow' }}" href="{{ link.url }}">
 				<span class="visually-hidden">{{ link.title }}</span>
 			</a>
 		</li>

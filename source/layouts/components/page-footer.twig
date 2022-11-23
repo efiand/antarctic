@@ -1,5 +1,9 @@
 <footer class="page-footer">
 	<div class="page-footer__inner container">
+		{% include 'logo.twig' %}
+
+		{% include 'nav.twig' with { bemMix: 'page-footer__nav-list', bemModifier: 'alter', navLinks } %}
+
 		{% include 'socials.twig' with { bemMix: 'page-footer__socials', socials } %}
 	</div>
 </footer>

@@ -1,4 +1,4 @@
-<ul class="nav {{ bemMix }}">
+<ul class="nav {{ bemMix }} {{ bemModifier ? 'nav--' ~ bemModifier }}">
 	{% for link in navLinks %}
 		<li>
 			<a href="{{ page != 'index' ? 'index.html' }}{{ link.url }}" class="nav__link">
