@@ -4,7 +4,6 @@ import getData from 'gulp-data';
 import gulp from 'gulp';
 import processHtml from 'gulp-posthtml';
 import useCondition from 'gulp-if';
-import validateBem from 'gulp-html-bemlinter';
 
 const isDev = process.env.NODE_ENV === 'development';
 const lintMode = Boolean(process.env.LINT);
@@ -58,7 +57,6 @@ const compileLayouts = () =>
       })
     )
     .pipe(processHtml())
-    .pipe(validateBem())
     .pipe(useCondition(!lintMode, beautify()))
     .pipe(useCondition(!lintMode, gulp.dest('build')));
 

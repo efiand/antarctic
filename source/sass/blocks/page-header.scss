@@ -93,6 +93,7 @@
     z-index: 1;
     align-items: flex-start;
     width: 285px;
+    overflow-y: auto;
     color: $color-tangaroa;
     background-color: $color-alice-blue;
     transition: color $trans-default, background-color $trans-default;

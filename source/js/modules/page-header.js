@@ -13,6 +13,7 @@ export default (headerElement) => {
     window.focusLock.lock('[data-page-header]');
     togglerElement.setAttribute('aria-expanded', 'true');
     document.addEventListener('keydown', keyCloseHandler);
+    document.documentElement.classList.add('scroll-lock');
     headerElement.classList.add('is-active');
   }
 
@@ -20,6 +21,7 @@ export default (headerElement) => {
     window.focusLock.unlock('[data-page-header]');
     togglerElement.setAttribute('aria-expanded', 'false');
     document.removeEventListener('keydown', keyCloseHandler);
+    document.documentElement.classList.remove('scroll-lock');
     headerElement.classList.remove('is-active');
   }
 

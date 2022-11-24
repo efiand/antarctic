@@ -4,12 +4,6 @@
   "singleQuote": true,
   "overrides": [
     {
-      "files": "*.html",
-      "options": {
-        "bracketSameLine": true
-      }
-    },
-    {
       "files": "*.scss",
       "options": {
         "singleQuote": false
