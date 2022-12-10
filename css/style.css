@@ -1607,7 +1607,7 @@ input[type=number]::-webkit-inner-spin-button {
   }
 
   .cards__items {
-    grid-template-columns: repeat(2, minmax(270px, 309px));
+    grid-template-columns: repeat(2, minmax(260px, 309px));
   }
 
   .cards__content {
@@ -1786,16 +1786,7 @@ input[type=number]::-webkit-inner-spin-button {
     left: -15px;
     width: calc(100% + 30px);
     padding: 20px 15px;
-  }
-
-  .page-header::before {
-    position: absolute;
-    top: 0;
-    right: 100%;
-    bottom: 0;
-    width: 100vw;
-    background-color: rgba(0, 43, 102, 0.5);
-    pointer-events: none;
+    box-shadow: -35px 0 0 transparent;
   }
 
   .page-header__toggler {
@@ -1808,25 +1799,21 @@ input[type=number]::-webkit-inner-spin-button {
     margin-top: 32px;
   }
 
-  .page-header.is-active::before {
-    content: "";
-  }
-
   .page-header.no-js:hover,
   .page-header.no-js:focus-within,
   .page-header.is-active {
     position: fixed;
     top: 0;
-    right: 0;
     bottom: 0;
-    left: auto;
+    left: 35px;
     z-index: 1;
     align-items: flex-start;
-    width: 285px;
+    width: calc(100% - 35px);
     overflow-y: auto;
     color: #011c40;
     background-color: #f9fbfd;
-    transition: color 0.3s ease, background-color 0.3s ease;
+    box-shadow: -35px 0 0 rgba(0, 43, 102, 0.5);
+    transition: color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
   }
 
   .page-header.no-js:hover .page-header__toggler::before,
