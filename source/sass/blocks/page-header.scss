@@ -16,16 +16,7 @@
     left: -15px;
     width: calc(100% + 30px);
     padding: 20px 15px;
-
-    &::before {
-      position: absolute;
-      top: 0;
-      right: 100%;
-      bottom: 0;
-      width: 100vw;
-      background-color: rgba($color-prussian-blue, 0.5);
-      pointer-events: none;
-    }
+    box-shadow: -35px 0 0 transparent;
   }
 }
 
@@ -66,14 +57,6 @@
   margin: 0;
 }
 
-.page-header.is-active {
-  @include vp-767 {
-    &::before {
-      content: "";
-    }
-  }
-}
-
 .page-header.no-js:hover,
 .page-header.no-js:focus-within {
   .page-header__toggler {
@@ -87,16 +70,16 @@
   @include vp-767 {
     position: fixed;
     top: 0;
-    right: 0;
     bottom: 0;
-    left: auto;
+    left: 35px;
     z-index: 1;
     align-items: flex-start;
-    width: 285px;
+    width: calc(100% - 35px);
     overflow-y: auto;
     color: $color-tangaroa;
     background-color: $color-alice-blue;
-    transition: color $trans-default, background-color $trans-default;
+    box-shadow: -35px 0 0 rgba($color-prussian-blue, 0.5);
+    transition: color $trans-default, background-color $trans-default, box-shadow $trans-default;
 
     .page-header__toggler::before {
       width: 13px;
