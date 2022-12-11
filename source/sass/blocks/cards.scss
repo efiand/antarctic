@@ -88,14 +88,12 @@
   }
 
   h4 {
-    display: none;
     margin: 0;
     font-weight: 500;
     font-size: 14px;
   }
 
   p {
-    display: none;
     margin: 0 0 10px;
     font-size: 14px;
     line-height: 20px;
@@ -103,7 +101,6 @@
 }
 
 .cards__btn {
-  display: none;
   margin-top: 15px;
 
   @include vp-1023 {
@@ -116,16 +113,18 @@
   @include shadow;
 
   img {
-    display: none;
+    @include visually-hidden;
   }
 
   h3 {
     margin: 0 0 14px;
   }
+}
 
+.cards__item:not(:hover):not(:focus-within) {
   h4,
   p,
   .cards__btn {
-    display: block;
+    @include visually-hidden;
   }
 }
