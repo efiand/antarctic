@@ -701,21 +701,18 @@ input[type=number]::-webkit-inner-spin-button {
 }
 
 .cards__content h4 {
-  display: none;
   margin: 0;
   font-weight: 500;
   font-size: 14px;
 }
 
 .cards__content p {
-  display: none;
   margin: 0 0 10px;
   font-size: 14px;
   line-height: 20px;
 }
 
 .cards__btn {
-  display: none;
   margin-top: 15px;
 }
 
@@ -726,7 +723,17 @@ input[type=number]::-webkit-inner-spin-button {
 
 .cards__item:hover img,
 .cards__item:focus-within img {
-  display: none;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
 }
 
 .cards__item:hover h3,
@@ -734,13 +741,20 @@ input[type=number]::-webkit-inner-spin-button {
   margin: 0 0 14px;
 }
 
-.cards__item:hover h4,
-.cards__item:hover p,
-.cards__item:hover .cards__btn,
-.cards__item:focus-within h4,
-.cards__item:focus-within p,
-.cards__item:focus-within .cards__btn {
-  display: block;
+.cards__item:not(:hover):not(:focus-within) h4,
+.cards__item:not(:hover):not(:focus-within) p,
+.cards__item:not(:hover):not(:focus-within) .cards__btn {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(100%);
+  clip-path: inset(100%);
 }
 
 .content {
