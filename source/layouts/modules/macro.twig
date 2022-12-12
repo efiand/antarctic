@@ -1,5 +1,5 @@
-{% macro background(imageset, color = null) -%}
-	style="
+{% macro background(imageset, color = null, immediately = false) -%}
+	{{ not immediately ? 'data-lazy-'}}style="
 		{%- for key, value in imageset -%}
 			--bg-{{ key }}: url('../{{ value }}');
 		{%- endfor -%}

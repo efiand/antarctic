@@ -6,9 +6,32 @@ document.querySelectorAll('.page-header').forEach(initPageHeader);
 
 // в load следует добавить скрипты, не участвующие в работе первого экрана
 window.addEventListener('load', () => {
-  document.querySelectorAll('[data-form]').forEach(initForm);
+  const initLazy = () => {
+    if (window.pageYOffset <= window.innerHeight) {
+      return;
+    }
 
-  initMaps(document.querySelectorAll('[data-map][id]'));
+    initMaps(document.querySelectorAll('[data-map][id]'));
+
+    document.querySelectorAll('[data-lazy-style]').forEach((lazyStyledElement) => {
+      lazyStyledElement.setAttribute('style', lazyStyledElement.dataset.lazyStyle);
+      lazyStyledElement.removeAttribute('data-lazy-style');
+    });
+
+    document.removeEventListener('scroll', scrollHandler);
+  };
+
+  function scrollHandler() {
+    initLazy();
+  }
+
+  if (window.pageYOffset > window.innerHeight) {
+    initLazy();
+  } else {
+    document.addEventListener('scroll', scrollHandler);
+  }
+
+  document.querySelectorAll('[data-form]').forEach(initForm);
 });
 
 // привязывайте js не на классы, а на дата-атрибуты (data-validate)

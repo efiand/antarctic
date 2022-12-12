@@ -24,13 +24,5 @@ export default (mapElements) => {
       mapElements.forEach(initMap);
     }
   });
-
-  function scrollHandler() {
-    if (window.pageYOffset > window.innerHeight) {
-      document.removeEventListener('scroll', scrollHandler);
-      document.body.append(scriptElement);
-    }
-  }
-
-  document.addEventListener('scroll', scrollHandler);
+  document.body.append(scriptElement);
 };
