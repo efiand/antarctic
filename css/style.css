@@ -858,50 +858,50 @@ input[type=number]::-webkit-inner-spin-button {
   background-size: cover;
 }
 
-@supports (background-image: var(--bg-webp)) {
+@supports (background-image: var(--bg-webp, none)) {
   .firstscreen {
-    background-image: var(--bg-webp);
+    background-image: var(--bg-webp, none);
   }
 
 @media (max-width: 1023px) {
     .firstscreen {
-      background-image: var(--bg-webpTablet);
+      background-image: var(--bg-webpTablet, none);
     }
 }
 
 @media (max-width: 767px) {
     .firstscreen {
-      background-image: var(--bg-webpMobile);
+      background-image: var(--bg-webpMobile, none);
     }
 }
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
     .firstscreen {
-      background-image: var(--bg-webp2x);
+      background-image: var(--bg-webp2x, none);
     }
 }
 
 @media (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 1023px), (min-resolution: 144dpi) and (max-width: 1023px), (min-resolution: 1.5dppx) and (max-width: 1023px) {
     .firstscreen {
-      background-image: var(--bg-webpTablet2x);
+      background-image: var(--bg-webpTablet2x, none);
     }
 }
 
 @media (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 767px), (min-resolution: 144dpi) and (max-width: 767px), (min-resolution: 1.5dppx) and (max-width: 767px) {
     .firstscreen {
-      background-image: var(--bg-webpMobile2x);
+      background-image: var(--bg-webpMobile2x, none);
     }
 }
 }
 
-@supports not (background-image: var(--bg-webp)) {
+@supports not (background-image: var(--bg-webp, none)) {
   .firstscreen {
-    background-image: var(--bg-default);
+    background-image: var(--bg-default, none);
   }
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
     .firstscreen {
-      background-image: var(--bg-default2x);
+      background-image: var(--bg-default2x, none);
     }
 }
 }
@@ -1060,50 +1060,50 @@ input[type=number]::-webkit-inner-spin-button {
   padding: 50px 0;
 }
 
-@supports (background-image: var(--bg-webp)) {
+@supports (background-image: var(--bg-webp, none)) {
   .form-section {
-    background-image: var(--bg-webp);
+    background-image: var(--bg-webp, none);
   }
 
 @media (max-width: 1023px) {
     .form-section {
-      background-image: var(--bg-webpTablet);
+      background-image: var(--bg-webpTablet, none);
     }
 }
 
 @media (max-width: 767px) {
     .form-section {
-      background-image: var(--bg-webpMobile);
+      background-image: var(--bg-webpMobile, none);
     }
 }
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
     .form-section {
-      background-image: var(--bg-webp2x);
+      background-image: var(--bg-webp2x, none);
     }
 }
 
 @media (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 1023px), (min-resolution: 144dpi) and (max-width: 1023px), (min-resolution: 1.5dppx) and (max-width: 1023px) {
     .form-section {
-      background-image: var(--bg-webpTablet2x);
+      background-image: var(--bg-webpTablet2x, none);
     }
 }
 
 @media (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 767px), (min-resolution: 144dpi) and (max-width: 767px), (min-resolution: 1.5dppx) and (max-width: 767px) {
     .form-section {
-      background-image: var(--bg-webpMobile2x);
+      background-image: var(--bg-webpMobile2x, none);
     }
 }
 }
 
-@supports not (background-image: var(--bg-webp)) {
+@supports not (background-image: var(--bg-webp, none)) {
   .form-section {
-    background-image: var(--bg-default);
+    background-image: var(--bg-default, none);
   }
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
     .form-section {
-      background-image: var(--bg-default2x);
+      background-image: var(--bg-default2x, none);
     }
 }
 }
@@ -1141,50 +1141,50 @@ input[type=number]::-webkit-inner-spin-button {
   padding: 120px 0;
 }
 
-@supports (background-image: var(--bg-webp)) {
+@supports (background-image: var(--bg-webp, none)) {
   .list {
-    background-image: var(--bg-webp);
+    background-image: var(--bg-webp, none);
   }
 
 @media (max-width: 1023px) {
     .list {
-      background-image: var(--bg-webpTablet);
+      background-image: var(--bg-webpTablet, none);
     }
 }
 
 @media (max-width: 767px) {
     .list {
-      background-image: var(--bg-webpMobile);
+      background-image: var(--bg-webpMobile, none);
     }
 }
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
     .list {
-      background-image: var(--bg-webp2x);
+      background-image: var(--bg-webp2x, none);
     }
 }
 
 @media (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 1023px), (min-resolution: 144dpi) and (max-width: 1023px), (min-resolution: 1.5dppx) and (max-width: 1023px) {
     .list {
-      background-image: var(--bg-webpTablet2x);
+      background-image: var(--bg-webpTablet2x, none);
     }
 }
 
 @media (-webkit-min-device-pixel-ratio: 1.5) and (max-width: 767px), (min-resolution: 144dpi) and (max-width: 767px), (min-resolution: 1.5dppx) and (max-width: 767px) {
     .list {
-      background-image: var(--bg-webpMobile2x);
+      background-image: var(--bg-webpMobile2x, none);
     }
 }
 }
 
-@supports not (background-image: var(--bg-webp)) {
+@supports not (background-image: var(--bg-webp, none)) {
   .list {
-    background-image: var(--bg-default);
+    background-image: var(--bg-default, none);
   }
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi), (min-resolution: 1.5dppx) {
     .list {
-      background-image: var(--bg-default2x);
+      background-image: var(--bg-default2x, none);
     }
 }
 }
