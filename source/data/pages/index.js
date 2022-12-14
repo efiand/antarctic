@@ -191,8 +191,8 @@ export default {
           />
           <strong>Введите имя из буквенных символов, разделяемых пробелами или дефисами</strong>
           <label for="order-name">Имя</label>`,
-        html`<input id="order-phone" name="phone" type="tel" placeholder="Телефон" pattern="^\\+?\\d{7,13}$" required />
-          <strong>Введите от 7 до 13 цифр</strong>
+        html`<input id="order-phone" name="phone" type="tel" placeholder="Телефон" pattern="^\\+?[\\d ()-]+$" required />
+          <strong>Введите телефон (только цифры)</strong>
           <label for="order-phone">Телефон</label>`,
         html`<input id="order-email" name="email" type="email" placeholder="Email" required />
           <strong>Введите валидный E-mail</strong>
