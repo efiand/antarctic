@@ -12,6 +12,7 @@ window.addEventListener('load', () => {
     }
 
     initMaps(document.querySelectorAll('[data-map][id]'));
+    document.querySelectorAll('[data-form]').forEach(initForm);
 
     document.querySelectorAll('[data-lazy-style]').forEach((lazyStyledElement) => {
       lazyStyledElement.setAttribute('style', lazyStyledElement.dataset.lazyStyle);
@@ -30,8 +31,6 @@ window.addEventListener('load', () => {
   } else {
     document.addEventListener('scroll', scrollHandler);
   }
-
-  document.querySelectorAll('[data-form]').forEach(initForm);
 });
 
 // привязывайте js не на классы, а на дата-атрибуты (data-validate)
