@@ -116,11 +116,11 @@
     height: 100%;
     object-fit: cover;
   }
+}
 
-  &.is-ready {
-    img {
-      display: none;
-    }
+.content__map.is-ready {
+  img {
+    display: none;
   }
 }
 
