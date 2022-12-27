@@ -26,13 +26,17 @@ const compileLayouts = () =>
         try {
           commonData = await import(`../source/data/global.js?${versionId}`);
         } catch (error) {
-          console.error(error);
+          if (error.code !== 'ERR_MODULE_NOT_FOUND') {
+            console.error(error);
+          }
         }
 
         try {
           pageData = await import(`../source/data/pages/${page}.js?${versionId}`);
         } catch (error) {
-          console.error(error);
+          if (error.code !== 'ERR_MODULE_NOT_FOUND') {
+            console.error(error);
+          }
         }
 
         return {
