@@ -6,13 +6,34 @@
 
   @include background-image;
 
-  .no-js:hover,
-  .no-js:focus-within,
-  .is-active {
-    + .firstscreen__promo {
-      @include vp-767 {
-        margin-top: 63px; // Стабильная высота мобильной шапки в покое
-        opacity: 0;
+  @include vp-767 {
+    .is-active + .firstscreen__promo {
+      margin-top: 63px; // Стабильная высота мобильной шапки в покое
+      opacity: 0;
+    }
+
+    .no-js + .firstscreen__promo {
+      margin-right: -15px;
+      margin-left: -15px;
+      padding-right: 15px;
+      padding-left: 15px;
+      background-position: 50% 100%;
+      background-size: cover;
+
+      @supports (background-image: var(--bg-webpMobile, none)) {
+        background-image: var(--bg-webpMobile, none);
+
+        @include retina {
+          background-image: var(--bg-webpMobile2x, none);
+        }
+      }
+
+      @supports not (background-image: var(--bg-webpMobile, none)) {
+        background-image: var(--bg-default, none);
+
+        @include retina {
+          background-image: var(--bg-default2x, none);
+        }
       }
     }
   }
