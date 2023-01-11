@@ -28,7 +28,7 @@
   }
 
   @include vp-599 {
-    grid-template-columns: minmax(270px, 309px);
+    grid-template-columns: 1fr;
     padding: 0 10px;
   }
 }
@@ -38,6 +38,11 @@
   height: 386px;
   color: $color-alice-blue;
   background-color: $color-tangaroa;
+
+  @include vp-599 {
+    height: auto;
+    padding-top: calc(386 / 270 * 100%);
+  }
 
   img {
     position: absolute;
@@ -101,11 +106,7 @@
 }
 
 .cards__btn {
-  margin-top: 15px;
-
-  @include vp-1023 {
-    margin-top: 18px;
-  }
+  margin-top: auto;
 }
 
 .cards__item:hover,
