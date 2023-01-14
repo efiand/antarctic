@@ -1,6 +1,7 @@
 import '../utils/focus-lock.js';
 
-export default (headerElement) => {
+export default () => {
+  const headerElement = document.querySelector('[data-page-header]');
   const togglerElement = headerElement.querySelector('[data-toggler]');
 
   function keyCloseHandler(evt) {

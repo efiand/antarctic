@@ -2,7 +2,7 @@ import initForm from './modules/form.js';
 import initMaps from './modules/map.js';
 import initPageHeader from './modules/page-header.js';
 
-document.querySelectorAll('.page-header').forEach(initPageHeader);
+initPageHeader();
 
 // в load следует добавить скрипты, не участвующие в работе первого экрана
 window.addEventListener('load', () => {
