@@ -16,6 +16,13 @@ export default (formElement, id = 0) => {
       fieldElement.value = value;
     }
 
+    const blurHandler = () => {
+      groupElement.classList.add('is-validable');
+
+      fieldElement.removeEventListener('blur', blurHandler);
+    };
+    fieldElement.addEventListener('blur', blurHandler);
+
     fieldElement.addEventListener('change', () => {
       groupElement.classList.add('is-validable');
 
