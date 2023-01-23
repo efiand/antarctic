@@ -944,6 +944,7 @@ input[type=number]::-webkit-inner-spin-button {
   width: 100%;
   padding: 13px 16px 12px;
   font-size: 14px;
+  line-height: initial;
   font-family: inherit;
   color: #011c40;
   background-color: #f9fbfd;
