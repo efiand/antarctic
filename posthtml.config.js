@@ -9,6 +9,8 @@ const typograf = new Typograf({
   htmlEntity: {type: 'name'},
 });
 typograf.disableRule('ru/other/phone-number');
+typograf.disableRule('common/punctuation/quote');
+
 const typography = () => (tree) => parser(typograf.execute(render(tree)));
 
 const getSourceName = (filename) => filename.replace(/^.*pages(\\+|\/+)(.*)\.twig$/, '$2').replace(/\\/g, '/');
