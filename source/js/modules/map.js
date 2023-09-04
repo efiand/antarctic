@@ -1,14 +1,31 @@
+import L from 'leaflet';
+
 const initMap = (mapElement) => {
   const {id} = mapElement;
-  const {initials, placemark} = window.pageData.maps[id];
+  const {coords, height, iconUrl, width, zoom} = window.pageData.maps[id];
 
-  ymaps.ready(() => {
-    const map = new ymaps.Map(id, initials);
-    map.geoObjects.add(new ymaps.Placemark(map.getCenter(), ...placemark));
-    map.behaviors.disable('scrollZoom');
+  // Добавляем карту
+  const map = L.map(id, {scrollWheelZoom: false}).setView(coords, zoom);
 
-    mapElement.classList.add('is-ready');
+  // Добавляем слой с нужной картой
+  L.tileLayer('http://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
+    minZoom: 10,
+    subdomains: ['mt0', 'mt1', 'mt2', 'mt3'],
+  }).addTo(map);
+
+  // Создаем главную метку
+  const pinIcon = L.marker(coords, {
+    icon: L.icon({
+      iconUrl,
+      iconSize: [width, height],
+      iconAnchor: [width / 2, height],
+    }),
   });
+
+  // Добавляем метку на карту
+  pinIcon.addTo(map);
+
+  mapElement.querySelector('picture').remove();
 };
 
 export default (mapElements) => {
@@ -16,13 +33,5 @@ export default (mapElements) => {
     return;
   }
 
-  const scriptElement = document.createElement('script');
-
-  scriptElement.src = 'https://api-maps.yandex.ru/2.1/?lang=ru_RU';
-  scriptElement.addEventListener('load', () => {
-    if (typeof ymaps !== 'undefined') {
-      mapElements.forEach(initMap);
-    }
-  });
-  document.body.append(scriptElement);
+  mapElements.forEach(initMap);
 };

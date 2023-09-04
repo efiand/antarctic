@@ -4,20 +4,14 @@ import {getImages} from '../global.js';
 const pageData = {
   maps: {
     contactsMap: {
-      initials: {
-        center: [59.9387165, 30.3230474],
-        controls: [],
-        zoom: 16,
+      coords: {
+        lat: 59.9387165,
+        lng: 30.3230474,
       },
-      placemark: [
-        {hintContent: 'г. Санкт Петербург, ул. Большая Конюшенная, 19/8'},
-        {
-          iconImageHref: 'img/sprite.svg#icon-pin',
-          iconImageSize: [18, 22],
-          iconLayout: 'default#image',
-          iconShadow: false,
-        },
-      ],
+      height: 22,
+      iconUrl: 'img/sprite.svg#icon-pin',
+      width: 18,
+      zoom: 16,
     },
   },
 };
