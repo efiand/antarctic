@@ -1,7 +1,5 @@
 export const getImages = (filename, additions = {}, useTablet = true, useMobile = true) => {
   const image = Object.assign(additions, {
-    default: `img/${filename}.jpg`,
-    default2x: `img/${filename}@2x.jpg`,
     webp: `img/${filename}.webp`,
     webp2x: `img/${filename}@2x.webp`,
   });
